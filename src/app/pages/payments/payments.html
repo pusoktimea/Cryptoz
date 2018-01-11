@@ -1,0 +1,66 @@
+<ba-sidebar></ba-sidebar>
+<page-top></page-top>
+
+<div class="al-main" ng-init="payVm.loadData()">
+  <div class="al-content">
+    <content-top></content-top>
+
+    <div class="widgets">
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div ba-panel ba-panel-class="with-scroll horizontal-tabs tabs-panel xmedium-panel" style="height: 600px !important;">
+            <div ng-include="'app/pages/payments/paymentsTabs.html'"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <uib-accordion>
+          <uib-accordion-group is-open="true" heading="Invoicing" panel-class="bootstrap-panel accordion-panel panel-default">
+            <div class="horizontal-scroll">
+              <table class="table table-hover" st-table="payVm.invoiceData">
+                <thead>
+                  <tr class="sortable" style="text-align: right;">
+                    <th style="text-align: left; line-height: 50px; font-weight: bold;" st-sort-default="true" st-sort="no">No.</th>
+                    <th style="text-align: right; line-height: 50px; font-weight: bold;" st-sort="currency">Currency</th>
+                    <th style="text-align: right; line-height: 50px; font-weight: bold;" st-sort="price">Price</th>
+                    <th style="text-align: right; line-height: 50px; font-weight: bold;" st-sort="rate_per_coin">Rate per coin/token</th>
+                    <th style="text-align: right; line-height: 50px; font-weight: bold;" st-sort="hash">Hash</th>
+                    <th style="text-align: right; line-height: 50px; font-weight: bold;" st-sort="status">Status</th>
+                    <th style="text-align: right; line-height: 50px; font-weight: bold;" st-sort="actions">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="item in payVm.invoiceData" class="editable-tr-wrap">
+                    <td style="text-align: left; line-height: 50px;">{{item.no}}</td>
+                    <td style="text-align: right; line-height: 50px;">${{item.currency}}</td>
+                    <td style="text-align: right; line-height: 50px;">{{item.price}}</td>
+                    <td style="text-align: right; line-height: 50px;">{{item.rate_per_coin}}</td>
+                    <td style="text-align: right; line-height: 50px;">{{item.hash}}</td>
+                    <td style="text-align: right; line-height: 50px;">{{item.status}}</td>
+                    <td style="text-align: right; line-height: 50px;">
+                      <div class="btn-group" uib-dropdown dropdown-append-to-body>
+                        <button type="button" class="btn btn-default" uib-dropdown-toggle>
+                          Action <span class="caret"></span>
+                        </button>
+                        <ul uib-dropdown-menu style="min-width: 105px;">
+                          <li><a href>Copy</a></li>
+                          <li role="separator" class="divider"></li>
+                          <li><a style="color: #ff0000;" href>Delete</a></li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </uib-accordion-group>
+        </uib-accordion>
+      </div>
+
+    </div>
+
+  </div>
+</div>

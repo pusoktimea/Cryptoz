@@ -1,0 +1,64 @@
+.drop-box {
+    background: #F8F8F8;
+    border: 5px dashed #DDD;
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    display: table;
+    margin: 15px 0;
+
+    .cust-middle {
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+
+.dragover {
+    border: 5px dashed rgba($success,0.85);
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.cust-btn {
+  display: table;
+  margin-bottom: 20px;
+}
+
+.cust-success {
+  color: rgba($success,0.85);
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.cust-failure {
+  color: rgba($danger,0.85);
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.secret {
+  float: right;
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+
+  .loading-animation {
+    top: 50%;
+    position: relative;
+    margin-top: -90px;
+  }
+}
+
+.cust-margin-upload {
+  margin: 10 0;
+}

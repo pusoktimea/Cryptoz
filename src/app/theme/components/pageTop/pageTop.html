@@ -1,0 +1,25 @@
+<div ng-controller="TopPageCtrl">
+  
+<div ng-init="loadName()" class="page-top clearfix" scroll-position="scrolled" max-height="50" ng-class="{'scrolled': scrolled}">
+  <a href="/overview" class="al-logo clearfix"> <img ng-src="assets/img/cryptoz-black.png" width="100"> </a>
+  <a href class="collapse-menu-link fa fa-navicon" ba-sidebar-toggle-menu></a>
+  <div class="user-profile clearfix">
+    <!-- <span style="float: right; width: 30px; height: 20px; text-align: center; margin-top: 10px;"><i class="fa fa-sort-desc"></i></span> -->
+    <div class="al-user-profile" uib-dropdown>
+      <a uib-dropdown-toggle class="profile-toggle-link">
+      <div class="with-round-bg info">
+        <img ng-src="assets/img/theme/icon/kameleon/Euro-Coin.svg">
+      </div>
+      </a>
+      <ul  class="top-dropdown-menu profile-dropdown" uib-dropdown-menu>
+        <li><i class="dropdown-arr"></i></li>
+        <li><a href="" ng-click="logOut()" class="signout"><i class="fa fa-power-off"></i>Sign out</a></li>
+      </ul>
+    </div>
+    <div>
+      <a href class="al-name"><span>Hi,&nbsp;</span>Cryptoz</a>
+    </div>
+    <msg-center></msg-center>
+  </div>
+</div>
+</div>

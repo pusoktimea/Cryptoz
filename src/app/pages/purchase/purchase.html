@@ -1,0 +1,66 @@
+<ba-sidebar></ba-sidebar>
+<page-top></page-top>
+
+<div class="al-main" ng-init="purchaseVm.loadRole()">
+  <div class="al-content">
+    <content-top></content-top>
+
+    <div class="widgets">
+      <div class="row">
+        <div class="col-md-12">
+          <div>
+            <select style="height: 50px; font-size: 20px; width: 130px; color: #666666; border: none; background-color: transparent; cursor: pointer;">
+              <option>Bitcoin</option>
+              <option>Ethereum</option>
+              <option>Litecoin</option>
+              <option>USD</option>
+            </select>
+          </div>
+          <div style="font-size: 12px; padding-top: 10px; display: block; height: 60px;">
+            You're currently having <b>4 machines</b> with average performance of <b>1.5Gh</b> in the pat 7 days.
+            <button style="float: right;" type="button" class="btn btn-primary btn-with-icon">Purchase additional machines</button>
+          </div>
+          <div ba-panel ba-panel-title="Machines" ba-panel-class="with-scroll">
+            <div class="horizontal-scroll">
+              <table class="table table-hover" st-table="purchaseVm.machineData">
+                <thead>
+                  <tr class="sortable" style="text-align: right;">
+                    <th style="text-align: left;"></th>
+                    <th style="text-align: right;" st-sort="power">Power (watts)</th>
+                    <th style="text-align: right;" st-sort="change_percent">Change (24h)</th>
+                    <th style="text-align: right;" st-sort="hash">Hashrate (7 days)</th>
+                    <th style="text-align: right;" st-sort="power">Power cost</th>
+                    <th style="text-align: right;"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="item in purchaseVm.machineData" class="editable-tr-wrap">
+                    <td style="text-align: left;">#{{item.id}}</td>
+                    <td style="text-align: right;">{{item.power}}</td>
+                    <td style="text-align: right; color: #35b148;">{{item.change_percent}}% ({{item.change_dollar}})</td>
+                    <td style="text-align: right;">{{item.hashrate}}</td>
+                    <td style="text-align: right;">{{item.power_cost}}</td>
+                    <td style="text-align: right; line-height: 50px;">
+                      <div class="btn-group" uib-dropdown dropdown-append-to-body>
+                        <button type="button" class="btn btn-default" uib-dropdown-toggle>
+                          Action <span class="caret"></span>
+                        </button>
+                        <ul uib-dropdown-menu style="min-width: 105px;">
+                          <li><a href>Copy</a></li>
+                          <li role="separator" class="divider"></li>
+                          <li><a style="color: #ff0000;" href>Delete</a></li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <purchase-sum></purchase-sum>
+
+    </div>
+  </div>

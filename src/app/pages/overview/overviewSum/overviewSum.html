@@ -1,0 +1,15 @@
+<div class="row pie-charts">
+  <div class="pie-chart-item-container overview-sum" ng-repeat="chart in charts">
+    <div ba-panel>
+      <div class="pie-chart-item">
+        <div class="description" style="text-align: left; float: right; width: 200px;">
+          <div class="description-stats">{{ ::chart.sum }} </div>
+          <div style="font-size: 12px; padding-left: 10px;">{{ ::chart.description }}<span>({{ ::chart.exact_description }})</span></div>
+        </div>
+        <div class="icon-overview" style="font-size: 20px; line-height: 85px; text-align: center;">          
+          <i class="fa fa-{{ ::chart.icon }}"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

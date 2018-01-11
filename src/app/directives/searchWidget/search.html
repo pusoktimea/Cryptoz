@@ -1,0 +1,26 @@
+<div class="row search-widget">
+    <div class="col-md-12">
+      <div ba-panel ba-panel-class="with-scroll">
+        <form class="form-inline search-form" ng-submit="searchVm.doSearch()">
+          <input type="text" class="form-control search-input" placeholder="Search query" ng-model="searchVm.searchQuery"/>
+          <button ng-click="searchVm.doSearch()" type="button" class="btn btn-primary btn-with-icon submit-button" ng-disabled="searchVm.isSearchInProgress"><i class="fa fa-search"></i>&nbsp;Search
+          </button>
+        </form>
+        <p ng-if="searchVm.searchError.length > 0" class="search-error">
+          {{searchVm.searchError}}
+        </p>
+      </div>
+      <div ng-if="searchVm.isSearchComplete" ba-panel ba-panel-class="with-scroll" ba-panel-title="Search Results">
+        <p ng-if="searchVm.noResults" class="empty-search-results-text">Nothing found for your search query</p>
+        <div ng-if="!searchVm.noResults">
+          <p ng-repeat="result in searchVm.searchResult">
+            <strong>{{result.count}}</strong>
+            <span ng-if="result.count === 1">result was</span>
+            <span ng-if="result.count > 1">results were</span>
+            found in the <strong>{{result.table}}</strong> table while looking at the <strong>{{result.field}}</strong> field.
+            <span ng-if="result.count > 0"> <a href="#" ng-click="searchVm.goToResults(result.table, result.id_list)">View results</a>.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>

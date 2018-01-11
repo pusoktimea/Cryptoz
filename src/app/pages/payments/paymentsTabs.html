@@ -1,0 +1,71 @@
+<uib-tabset active="$tabSetStatus.activeTab">
+  <uib-tab heading="Payments">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-6">
+          <div class="btn-group" uib-dropdown dropdown-append-to-body>
+            <span style="font-size: 16px; float: left; padding-top: 8px;">Earnings Last&nbsp;&nbsp;</span>
+            <select style="height: 35px; width: 100px; color: #666666; border: 1px solid #d6d6d6; background-color: transparent; cursor: pointer;">
+              <option>7 days</option>
+              <option>14 days</option>
+              <option>1 month</option>
+              <option>6 months</option>
+            </select>
+          </div>
+          <span style="display: block;font-size: 30px; padding: 30px 0;">$9,964.36</span>
+        </div>
+        <div class="col-md-6" style="text-align: right;">
+          <span style="display: block; font-size: 22px;">$464.36</span>
+          <span style="display: block;font-size: 12px; padding-top: 10px;">Average Profit ()</span>
+        </div>
+        <div ng-include="'app/pages/payments/paymentChart/paymentChart.html'"></div>
+      </div>
+    </div>
+  </uib-tab>
+
+  <uib-tab heading="Wallets">
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="horizontal-scroll">
+          <table class="table table-hover" st-table="payVm.walletData">
+            <thead>
+              <tr class="sortable" style="text-align: right;">
+                <th style="text-align: left; line-height: 50px;" st-sort="currency"></th>
+                <th style="text-align: right; line-height: 50px; font-weight: bold;" st-sort="price">Address</th>
+                <th style="text-align: right; line-height: 50px; font-weight: bold;" st-sort="change_percent">Paid to date</th>
+                <th style="text-align: right; line-height: 50px; font-weight: bold;" st-sort="price_graph">Unpaid balance</th>
+                <th style="text-align: right; line-height: 50px; font-weight: bold;" st-sort="market_cap">Total coins generated</th>
+                <th style="text-align: right; line-height: 50px; font-weight: bold;" st-sort="coins_circulating">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="item in payVm.walletData" class="editable-tr-wrap">
+                <td style="text-align: left; line-height: 50px;">{{item.currency}}</td>
+                <td style="text-align: right; line-height: 50px;">${{item.wallet_address}}</td>
+                <td style="text-align: right; line-height: 50px;">{{item.paid_to_date}}</td>
+                <td style="text-align: right; line-height: 50px;">{{item.unpaid_balance}}</td>
+                <td style="text-align: right; line-height: 50px;">{{item.total_coins}}</td>
+                <td style="text-align: right; line-height: 50px;">
+                  <div class="btn-group" uib-dropdown dropdown-append-to-body>
+                    <button type="button" class="btn btn-default" uib-dropdown-toggle>
+                      Action <span class="caret"></span>
+                    </button>
+                    <ul uib-dropdown-menu style="min-width: 105px;">
+                      <li><a href>Copy</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li><a style="color: #ff0000;" href>Delete</a></li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div style="text-align: left; padding: 20px;">
+            <button type="button" class="btn btn-primary btn-with-icon">Add a wallet</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </uib-tab>
+</uib-tabset>

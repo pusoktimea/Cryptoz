@@ -1,0 +1,19 @@
+<div class="row pie-charts">
+  <div class="pie-chart-item-container overview-sum" ng-repeat="chart in charts">
+    <div ba-panel>
+      <div class="pie-chart-item">
+        <div class="desc" style="text-align: left; float: right; width: 200px; padding-left: 20px;">
+          <div class="desc-stats">{{ ::chart.currency }} </div>
+          <div style="font-size: 12px; padding-left: 10px;">{{ ::chart.mh }} <span>({{ ::chart.date }})</span></div>
+          <div style="float: left; margin-top: 10px; font-size: 11px; color: #23a7ef; cursor: pointer;" ng-click="purchaseVm.showCalculateModal()">Calculate</div>
+          <button style="float: right; margin-top: 10px; font-size: 11px" type="button" class="btn btn-primary btn-xs">Purchase for $2500</button>
+        </div>
+        <div class="icon-overview" style="font-size: 20px; line-height: 85px; text-align: center;">          
+          <i class="fa fa-{{ ::chart.icon }}"></i>
+        </div>
+        <div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

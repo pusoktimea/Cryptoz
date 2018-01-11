@@ -1,0 +1,68 @@
+.row-action-modal {
+
+  .modal-body {
+    min-height: 120px;
+
+    form {
+      // display: none;
+    }
+  }
+
+  .error-text {
+    color: red !important;
+    margin-bottom: 0;
+    position: absolute;
+
+    &--field {
+      font-size: 11px;
+      margin-top: 4px;
+    }
+
+    &--form {
+      font-size: 13px;
+      top: 0;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  .no-changes-text {
+    margin-bottom: 0;
+    position: absolute;
+    font-size: 15px;
+    top: 0;
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+  }
+
+  .modal-footer {
+    position: relative;
+    padding-top: 20px;
+
+    .form-submit-button {
+      width: 160px;
+
+      img {
+        width: 15px;
+      }
+    }
+  }
+
+  .loading-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    text-align: center;
+
+    .loading-animation {
+      top: 50%;
+      position: relative;
+      margin-top: -90px;
+    }
+  }
+}

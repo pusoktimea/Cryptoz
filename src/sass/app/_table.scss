@@ -1,0 +1,28 @@
+.table-panel {
+  height: 295px;
+}
+
+.handle {
+	background: #209e91;
+	width: 1px !important;
+	right: -1px !important;
+	height: 100%;
+	cursor: col-resize;
+	display: inline-block;
+    float: right;
+    position: relative;
+    pointer-events: auto;
+}
+
+.table-head {
+	padding: 0 !important; 
+	padding-left: 5px !important; 
+	vertical-align: middle !important;
+	height: 30px;
+	line-height: 30px !important;
+	min-width: 30px !important;
+}
+
+.alternate-color {
+  background-color: #efefef;
+}

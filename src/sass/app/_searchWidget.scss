@@ -1,0 +1,29 @@
+.search-widget {
+  .search-form {
+    text-align: center;
+
+    .search-input {
+      @include placeholderStyle($default-text, 0.7);
+      background: transparent;
+      color: #666666;
+      border: 1px solid #cbcbcb;
+      width: 400px;
+      margin-right: 10px;
+    }
+
+    .submit-button {
+      width: 100px;
+
+      img {
+        width: 15px;
+      }
+    }
+  }
+  .search-error {
+    color: red;
+    margin-bottom: 0;
+    margin-top: 5px;
+    text-align: center;
+    font-size: 12px;
+  }
+}

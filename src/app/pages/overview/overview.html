@@ -1,0 +1,68 @@
+<ba-sidebar></ba-sidebar>
+<page-top></page-top>
+
+<div class="al-main" ng-init="overviewVm.loadTables()">
+  <div class="al-content">
+    <div class="loading-overlay" ng-if="searchVm.isSearchInProgress">
+      <!-- copied from https://codepen.io/aurer/pen/jEGbA -->
+      <img class="loading-animation" ng-src="assets/img/loading.svg" />
+    </div>
+    <content-top></content-top>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div ba-panel ba-panel-title="Currencies price index" ba-panel-class="with-scroll">
+          <div class="horizontal-scroll">
+            <table class="table table-hover" st-table="overviewVm.tableData">
+              <thead>
+                <tr class="sortable" style="text-align: right;">
+                  <th style="text-align: left;" st-sort="currency">Cryptocurrency</th>
+                  <th style="text-align: right;" st-sort="price">Today's Price</th>
+                  <th style="text-align: right;" st-sort="change_percent">Change (24h)</th>
+                  <th style="text-align: right;" st-sort="price_graph">Price graph (7 days)</th>
+                  <th style="text-align: right;" st-sort="market_cap">Market cap</th>
+                  <th style="text-align: right;" st-sort="coins_circulating">Coins in circulation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="item in overviewVm.tableData" class="editable-tr-wrap">
+                  <td style="text-align: left;">{{item.currency}}</td>
+                  <td style="text-align: right;">${{item.price}}</td>
+                  <td style="text-align: right; color: #35b148;">{{item.change_percent}}% (${{item.change_dollar}})</td>
+                  <td style="text-align: right;">
+                      <!-- <div
+                      line-chart
+                      line-data='overviewVm.lineData'
+                      line-xkey='y'
+                      line-ykeys='["a"]'
+                      line-labels='["Total Earnings"]'
+                      line-colors='colors'>
+                      </div> -->
+                  </td>
+                  <td style="text-align: right;">{{item.market_cap}}</td>
+                  <td style="text-align: right;">{{item.coins_circulating}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <overview-sum></overview-sum>
+
+    <div class="row">
+      <div class="col-lg-6 col-md-12 col-sm-12" ba-panel ba-panel-title="All Cryptocurrency News" ba-panel-class="medium-panel traffic-panel with-scroll feed-panel">
+        <news></news>
+      </div>
+
+      <div class="col-lg-6 col-md-12 col-sm-12" 
+      ba-panel ba-panel-title="Total Profit" 
+      ba-panel-class="medium-panel traffic-panel">
+      <div ng-include="'app/pages/overview/lineChart/lineChart.html'"></div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
