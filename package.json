@@ -1,9 +1,6 @@
 {
   "name": "cryptoz",
   "version": "1.0.1",
-  "scripts": {
-    "postinstall": "bower cache clean && bower install"
-  },
   "devDependencies": {
     "angular-time-picker": "^1.1.0",
     "browser-sync": "~2.18.2",
