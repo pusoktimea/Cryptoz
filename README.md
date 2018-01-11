@@ -1,4 +1,4 @@
-#Cryptoz
+# Cryptoz
 
 ## Install tools
 If you don’t have any of these tools installed already, you will need to:
