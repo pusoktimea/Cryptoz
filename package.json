@@ -48,7 +48,7 @@
     "bower": "^1.5.2"
   },
   "scripts": {
-    "postinstall": "node ./node_modules/bower/bin/bower install",
+    "postinstall": "node ./node_modules/bower/bin/bower install && node ./node_modules/bower/bin/gulp install",
     "start": "gulp serve:dist"
   }
 }
