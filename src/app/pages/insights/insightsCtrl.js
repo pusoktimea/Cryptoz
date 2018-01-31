@@ -8,25 +8,25 @@ function insightsCtrl() {
   vm.tableData = [
   {
     id: 1,
-    performance: '2000.45',
+    performance: 'SHA-256',
     change_percent: '1.45',
     change_dollar: '4.56'
   },
   {
     id: 2,
-    performance: '456.45',
+    performance: 'SHA-256',
     change_percent: '1.45',
     change_dollar: '4.56'
   },
   {
     id: 3,
-    performance: '557.56',
+    performance: 'SHA-256',
     change_percent: '1.45',
     change_dollar: '4.56'
   },
   {
     id: 4,
-    performance: '557.56',
+    performance: 'SHA-256',
     change_percent: '1.45',
     change_dollar: '4.56'
   }
