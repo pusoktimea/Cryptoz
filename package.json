@@ -54,6 +54,6 @@
   },
   "scripts": {
     "postinstall": "node ./node_modules/bower/bin/bower install",
-    "start": "gulp serve:dist"
+    "start": "gulp serve"
   }
 }
