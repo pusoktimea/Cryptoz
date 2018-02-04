@@ -53,6 +53,7 @@
     "grunt-cli": "1.2.0"
   },
   "scripts": {
+    "postinstall": "node ./node_modules/bower/bin/bower install",
     "start": "gulp build"
   }
 }
