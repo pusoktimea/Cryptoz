@@ -5,7 +5,7 @@
     .controller('calcCtrl', calcCtrl);
 
   /** @ngInject */
-  function calcCtrl() {
+  function calcCtrl(reinvestModal, purchaseModal, purchaseContract) {
     var vm = this
 
     vm.miningSum = [
@@ -46,5 +46,17 @@
         profit: '0.12'
       }
     ];
+
+    vm.showReinvestModal = function() {
+      reinvestModal.open();
+    };
+    vm.showPurchaseMachineModal = function() {
+      purchaseModal.open();
+    };
+
+    vm.showPurchaseContractModal = function() {
+      purchaseContract.open();
+    };
+
   }
 })();

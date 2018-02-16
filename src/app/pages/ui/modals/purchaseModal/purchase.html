@@ -1,0 +1,29 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+      <em class="fa fa-times sn-link-close" style="font-size: 16px;"></em>
+    </button>
+    <h4 class="modal-title" id="myModalLabel">Purchase Machine</h4>
+    <h3 class="with-line"></h3>
+  </div>
+  <div class="modal-body clearfix">
+    <div class="row">
+      <div class="col-md-12">
+        <h5>Select a contract</h5>
+        <div class="form-group">
+          <select selectpicker class="form-control filter-input">
+            <option ng-repeat="crypto in purVm.standardSelectItems" value="{{crypto.value}}">{{crypto.label}}</option>
+          </select>
+        </div>
+        <h5>Total to pay:</h5>
+        <h5>$&nbsp;{{crypto.price}}</h5>
+
+      <button type="button" class="btn btn-primary btn-with-icon save-profile" ng-click="$close()">
+        <i class="fa fa-plus"></i>Purchase Machine
+      </button>
+      <button type="button" class="btn btn-danger btn-with-icon save-profile" style="float: right;" ng-click="$dismiss()">
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>

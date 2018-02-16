@@ -17,6 +17,7 @@ angular.module('BlurAdmin', [
   'angular-progress-button-styles',
   'ngTableResize',
   'wingify.timePicker',
+  'ngclipboard',
 
   // 'BlurAdmin.services',
 

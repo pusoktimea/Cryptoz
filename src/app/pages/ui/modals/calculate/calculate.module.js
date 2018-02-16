@@ -9,7 +9,7 @@
       this.open = function(){
         return $uibModal.open({
           animation: false,
-          templateUrl: 'app/pages/purchase/calculate/calculate.html',
+          templateUrl: 'app/pages/ui/modals/calculate/calculate.html',
           controller: 'calcCtrl',
           controllerAs: 'calcVm',
           size: 'lg',

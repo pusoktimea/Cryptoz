@@ -11,49 +11,24 @@
     $scope.charts = [{
       color: pieColor,
       mh: '500 mH/s',
-      date: '11-20 November',
       currency: 'Bitcoin',
-      icon: 'server',
     }, {
       color: pieColor,
       mh: '500 mH/s',
-      date: '11-20 November',
-      currency: 'Litecoin',
-      icon: 'server',
-    }, {
-      color: pieColor,
-      mh: '500 mH/s',
-      date: '11-20 November',
       currency: 'Ethereum',
-      icon: 'server',
     }, {
       color: pieColor,
       mh: '500 mH/s',
-      date: '11-20 November',
-      currency: 'Dogecoin',
-      icon: 'server',
+      currency: 'Litecoin',
+    }, {
+      color: pieColor,
+      mh: '500 mH/s',
+      currency: 'Dash',
+    }, {
+      color: pieColor,
+      mh: '500 mH/s',
+      currency: 'SiaCoin',
     }
     ];
-
-    function getRandomArbitrary(min, max) {
-      return Math.random() * (max - min) + min;
-    }
-
-    function loadPieCharts() {
-      $('.refresh-data').on('click', function () {
-        updatePieCharts();
-      });
-    }
-
-    function updatePieCharts() {
-      $('.pie-charts .chart').each(function(index, chart) {
-        $(chart).data('easyPieChart').update(getRandomArbitrary(55, 90));
-      });
-    }
-
-    $timeout(function () {
-      loadPieCharts();
-      updatePieCharts();
-    }, 1000);
   }
 })();

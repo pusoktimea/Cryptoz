@@ -7,10 +7,30 @@
 
     <div class="widgets">
 
-      <div class="row">
+      <div class="row payments-page">
         <div class="col-lg-12">
-          <div ba-panel ba-panel-class="with-scroll horizontal-tabs tabs-panel xmedium-panel" style="height: 600px !important;">
-            <div ng-include="'app/pages/payments/paymentsTabs.html'"></div>
+          <div ba-panel ba-panel-title="Payments" ba-panel-class="with-scroll">
+            <div class="horizontal-scroll">
+              <div class="col-md-6">
+                <div class="btn-group" uib-dropdown dropdown-append-to-body>
+                  <span class="payments-page-earnings" style="font-size: 16px; float: left; padding-top: 5px; margin: 10px;">Earnings&nbsp;&nbsp;</span>
+                  <select style="height: 35px; width: 100px; color: #666666; border: 1px solid #d6d6d6; background-color: transparent; cursor: pointer;" ng-model="profitPerDays">
+                    <option ng-repeat="item in payVm.dropDownData">{{item.date}}</option>
+                  </select>
+                  <div style="padding-left: 10px; padding-top: 10px; display: inline-block;">  
+                    <span style="display: inline-block; font-size: 22px;" ng-if="profitPerDays=='Today'">$164.36</span>
+                    <span style="display: inline-block; font-size: 22px;" ng-if="profitPerDays=='7 Days'">$464.36</span>
+                    <span style="display: inline-block; font-size: 22px;" ng-if="profitPerDays=='14 Days'">$964.36</span>
+                    <!-- <span style="display: inline-block; font-size: 12px; padding-top: 10px;">Average Profit ()</span> -->
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 payments-page-total" style="text-align: right;">
+                <span style="display: inline-block;font-size: 30px; padding: 30px 0;">Total Earned:&nbsp;</span>
+                <span class="sum" style="display: inline-block;font-size: 30px; padding: 30px 0;">$9,964.36</span>
+              </div>
+              <div ng-include="'app/pages/payments/paymentChart/paymentChart.html'"></div>
+            </div>
           </div>
         </div>
 
@@ -18,7 +38,7 @@
 
       <div class="row">
         <uib-accordion>
-          <uib-accordion-group is-open="true" heading="Invoicing" panel-class="bootstrap-panel accordion-panel panel-default">
+          <uib-accordion-group is-open="false" heading="Payouts" panel-class="bootstrap-panel accordion-panel panel-default">
             <div class="horizontal-scroll">
               <table class="table table-hover" st-table="payVm.invoiceData">
                 <thead>
@@ -29,29 +49,16 @@
                     <th style="text-align: right; line-height: 50px; font-weight: bold;" st-sort="rate_per_coin">Rate per coin/token</th>
                     <th style="text-align: right; line-height: 50px; font-weight: bold;" st-sort="hash">Hash</th>
                     <th style="text-align: right; line-height: 50px; font-weight: bold;" st-sort="status">Status</th>
-                    <th style="text-align: right; line-height: 50px; font-weight: bold;" st-sort="actions">Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr ng-repeat="item in payVm.invoiceData" class="editable-tr-wrap">
+                  <tr ng-repeat="item in payVm.invoiceData">
                     <td style="text-align: left; line-height: 50px;">{{item.no}}</td>
                     <td style="text-align: right; line-height: 50px;">${{item.currency}}</td>
                     <td style="text-align: right; line-height: 50px;">{{item.price}}</td>
                     <td style="text-align: right; line-height: 50px;">{{item.rate_per_coin}}</td>
                     <td style="text-align: right; line-height: 50px;">{{item.hash}}</td>
                     <td style="text-align: right; line-height: 50px;">{{item.status}}</td>
-                    <td style="text-align: right; line-height: 50px;">
-                      <div class="btn-group" uib-dropdown dropdown-append-to-body>
-                        <button type="button" class="btn btn-default" uib-dropdown-toggle>
-                          Action <span class="caret"></span>
-                        </button>
-                        <ul uib-dropdown-menu style="min-width: 105px;">
-                          <li><a href>Copy</a></li>
-                          <li role="separator" class="divider"></li>
-                          <li><a style="color: #ff0000;" href>Delete</a></li>
-                        </ul>
-                      </div>
-                    </td>
                   </tr>
                 </tbody>
               </table>

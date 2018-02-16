@@ -161,7 +161,7 @@
         valueLineEnabled: true,
         valueLineBalloonEnabled: true,
         valueLineAlpha: 0.5,
-        fullWidth: true,
+        fullWidth: false,
         cursorColor:"#8ba7ba",
         valueZoomable:true
       },

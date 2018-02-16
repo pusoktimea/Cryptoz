@@ -10,6 +10,7 @@
     'BlurAdmin.pages.purchase',
     'BlurAdmin.pages.ui',
     'BlurAdmin.pages.payments',
+    'BlurAdmin.pages.wallets',
     'BlurAdmin.pages.overview'
   ])
   .config(routeConfig);

@@ -2,7 +2,7 @@ angular.module('BlurAdmin.pages.overview')
       .controller('overviewCtrl', overviewCtrl);
 
   /** @ngInject */
-  function overviewCtrl($location, $timeout, $window) {
+  function overviewCtrl(reinvestModal) {
     var vm = this;
 
     vm.tableData = [
@@ -47,5 +47,9 @@ angular.module('BlurAdmin.pages.overview')
       {y: "2011", a: 75},
       {y: "2012", a: 100}
     ];
+
+    vm.showReinvestModal = function() {
+      reinvestModal.open();
+    };
 
   };

@@ -1,3 +1,155 @@
 @import 'theme/conf/mixins';
 @import 'theme/conf/colorScheme/mint';
 @import 'theme/conf/variables';
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	.auth-block {
+    	width: 95% !important;
+	}
+	.al-main {
+		margin-left: 0px !important;
+	}
+	.desc {
+		width: 110px !important;
+	}
+	.purchase-sum-calc {
+		display: none !important;
+	}
+
+	.wallet-page-modal-btn-mob > .btn {
+		padding: 20px !important;
+		font-size: 16px !important;
+	}
+	.wallet-page-modal-btn-mob {
+		display: block !important;
+		text-align: center !important;
+	}
+	.wallet-page-modal-btn-desk {
+		display: none !important;
+	}
+	.purchase-modal-btn {
+		text-align: center !important;
+	}
+	.purchase-modal-btn > .btn {
+		float: none !important;
+	}
+	.btn-cont {
+		padding: 15px !important;
+	}
+	.payments-page-total > .sum {
+		padding: 0 !important;
+	}
+	.menu-collapsed {
+		.al-main {
+			margin-left: 0px;
+		}
+		.purchase-sum-calc {
+			display: block !important;
+			font-size: 16px !important;
+		}
+		.desc {
+			width: 275px !important;
+		}
+		.purchase-sum-btn {
+			padding: 10px !important;
+			margin-top: -30px !important;
+			font-size: 16px !important;
+		}
+		.wallet-page-modal-btn-desk {
+			display: none !important;
+		}
+		.wallet-page-modal-btn-mob {
+			display: block !important;
+			text-align: center !important;
+		}
+		.wallet-page-modal-btn-mob > .btn {
+			padding: 20px !important;
+			font-size: 16px !important;
+		}
+		.modal-dialog {
+			position: absolute !important;
+			margin: 17% !important;
+			bottom: 20% !important;
+		}
+		.payments-page {
+			display: block !important;
+		}
+		.payments-page-earnings {
+			font-size: 25px !important;
+			padding-top: 15px !important;
+		}
+		.payments-page-total {
+			text-align: center !important;
+		}
+		.payments-page-total > .sum {
+			padding: 0 !important;
+		}
+	}
+
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+	.user-profile {
+		min-width: 200px !important;
+	}
+	.btn-cont {
+		padding: 15px !important;
+	}
+	.wallet-page-modal-btn-mob > .btn {
+		display: none !important;
+	}
+	.payments-page-total {
+			text-align: center !important;
+		}
+	.desc {
+		width: 200px !important;
+	}
+	.purchase-sum-calc {
+		display: block !important;
+		font-size: 16px !important;
+	}
+	.purchase-sum-btn {
+		padding: 5px !important;
+		margin-top: 0px !important;
+		font-size: 11px !important;
+	}
+	.menu-collapsed {
+		.al-main {
+			margin-left: 50px;
+		}
+		.desc {
+			width: 250px !important;
+		}
+	}
+}
+
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1224px) {
+	.user-profile {
+		min-width: 250px !important;
+	}
+	.desc {
+		width: 175px !important;
+	}
+	.wallet-page-modal-btn-mob > .btn {
+		display: none !important;
+	}
+	.menu-collapsed {
+		.al-main {
+			margin-left: 50px;
+		}
+		.desc {
+			width: 190px !important;
+		}
+	}
+}
+
+/* Large screens ----------- */
+@media only screen  and (min-width : 1824px) {
+	.wallet-page-modal-btn-mob > .btn {
+		display: none !important;
+	}
+}

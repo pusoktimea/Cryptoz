@@ -44,14 +44,14 @@
             <input type="text" class="form-control" id="reward" placeholder="0">
           </div>
         </div>
-        <div>
+        <div class="calc-modal-btn-cent">
           <button style="margin-left: 30%; color: #23a7ef; border: 1px solid #23a7ef; background-color: transparent;" type="button" class="btn btn-primary btn-with-icon">Calculate</button>
         </div>
       </div>
 
 
       <div class="col-md-9">
-        <div class="panel-title" style="margin-bottom: 20px;">Mining summary</div>
+        <div class="panel-title calc-sum" style="margin-bottom: 20px;">Mining summary</div>
         <div style="font-size: 12px;">Days to generate one block mining solo: <b>74.28 Day(s)</b> (can vary greatly depending on your lock)</div>
         <div style="font-size: 12px;">Days to generate one BTC: <b>212.21 Day(s)</b> (can vary greatly depending on the current exchange rates)</div>
         <div style="font-size: 12px;">Days to break even: <b>N/A</b> (can vary greatly depending on the current exchange rates)</div>
@@ -80,8 +80,12 @@
             </tbody>
           </table>
         </div>
-        <button style="position: absolute; bottom: -120px; left: 425px;" type="button" class="btn btn-primary btn-with-icon">Purchase additional machines</button>
-      </div>
-    </div>
-  </div>
+        <div class="calc-modal-btn-cent">
+         <button style="position: absolute; bottom: -120px; left: 425px;" type="button" class="btn btn-primary btn-with-icon cta" ng-click="calcVm.showPurchaseMachineModal()">Purchase additional machines</button>
+         <button style="position: absolute; bottom: -120px; left: 190px;" type="button" class="btn btn-primary btn-with-icon cta" ng-click="calcVm.showPurchaseContractModal()">Purchase additional contracts</button>
+         <button style="position: absolute; bottom: -120px; left: 25px;" type="button" class="btn btn-primary btn-with-icon cta" ng-click="calcVm.showReinvestModal()">Reinvest</button>
+       </div>
+     </div>
+   </div>
+ </div>
 </div>

@@ -1,7 +1,7 @@
 angular.module('BlurAdmin.pages.insights')
 .controller('insightsCtrl', insightsCtrl);
 
-function insightsCtrl() {
+function insightsCtrl(purchaseModal, purchaseContract) {
   var vm = this;
   vm.disabled = undefined;
 
@@ -64,5 +64,13 @@ function insightsCtrl() {
     date: '3'
   }
   ];
+
+  vm.showPurchaseMachineModal = function() {
+    purchaseModal.open();
+  };
+
+  vm.showPurchaseContractModal = function() {
+    purchaseContract.open();
+  };
 
 };

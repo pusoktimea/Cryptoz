@@ -1,0 +1,28 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+      <em class="fa fa-times sn-link-close" style="font-size: 16px;"></em>
+    </button>
+    <h4 class="modal-title" id="myModalLabel">Reinvest</h4>
+    <h3 class="with-line"></h3>
+  </div>
+  <div class="modal-body clearfix">
+    <div class="row">
+      <div class="col-md-12">
+        <p>The Reinvest function allows you to automatically buy additional hashrate as soon as your Balance allows it.</p>
+        <p>Activating this function will use your current Balance to purchase the maximum possible amount of hashrate.</p>
+        <p>After every payout the system will check if your Balance is sufficient to purchase at least a minimum amount of hashrate (10 GH/s for SHA-256). If it is, then the purchase will be created and automatically confirmed.</p>
+        <div class="form-group">
+          <select selectpicker class="form-control filter-input">
+            <option value="SHA-256">SHA-256</option>
+          </select>
+        </div>
+        <button type="button" class="btn btn-primary btn-with-icon" ng-click="$close()">
+          Reinvest
+        </button>
+        <button type="button" class="btn btn-danger btn-with-icon" style="float: right;" ng-click="$dismiss()">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>

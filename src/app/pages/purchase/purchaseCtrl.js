@@ -5,7 +5,7 @@
     .controller('purchaseCtrl', purchaseCtrl);
 
   /** @ngInject */
-  function purchaseCtrl(calculateModal) {
+  function purchaseCtrl(calculateModal, purchaseModal, purchaseContract) {
     var vm = this;
 
     vm.machineData = [
@@ -51,5 +51,12 @@
       calculateModal.open();
     };
 
+    vm.showPurchaseMachineModal = function() {
+      purchaseModal.open();
+    };
+
+    vm.showPurchaseContractModal = function() {
+      purchaseContract.open();
+    };
   };
  })();

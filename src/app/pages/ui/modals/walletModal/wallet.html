@@ -1,0 +1,31 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+      <em class="fa fa-times sn-link-close" style="font-size: 16px;"></em>
+    </button>
+    <h4 class="modal-title" id="myModalLabel">Add Wallet</h4>
+    <h3 class="with-line"></h3>
+  </div>
+  <div class="modal-body clearfix">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <select selectpicker class="form-control filter-input">
+            <option ng-repeat="crypto in walletModVm.standardSelectItems" value="{{crypto.value}}">{{crypto.label}}</option>
+          </select>
+        </div>
+        <div>
+          <label for="wallet">Wallet Address</label>  
+          <input type="text" id="wallet" class="form-control" placeholder="Enter Wallet"/>
+        </div>
+
+        <button type="button" class="btn btn-primary btn-with-icon save-profile" ng-click="$close()">
+          <i class="fa fa-plus"></i>Add Wallet
+        </button>
+        <button type="button" class="btn btn-danger btn-with-icon save-profile" ng-click="$dismiss()" style="float: right;">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

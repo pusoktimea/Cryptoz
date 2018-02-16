@@ -3,12 +3,11 @@
   'use strict';
 
   angular.module('BlurAdmin.pages.insights')
-    .controller('combinedChartCtrl', combinedChartCtrl);
+    .controller('btcCombinedChartCtrl', btcCombinedChartCtrl);
 
-  function combinedChartCtrl($element, baConfig, layoutPaths) {
+  function btcCombinedChartCtrl($element, baConfig, layoutPaths) {
     var layoutColors = baConfig.colors;
-    var id = $element[0].getAttribute('id');
-    var chart = AmCharts.makeChart(id, {
+    var chart = AmCharts.makeChart("btcChart", {
       "type": "serial",
       "theme": "light",
       "color": layoutColors.defaultText,
@@ -92,25 +91,25 @@
       },
       "dataProvider": [{
         "date": "2013-01-16",
-        "sales2": 8000
+        "sales2": 10000
       }, {
         "date": "2013-01-17",
         "sales2": 6000
       }, {
         "date": "2013-01-18",
-        "sales2": 2000
-      }, {
-        "date": "2013-01-19",
-        "sales2": 9000
-      }, {
-        "date": "2013-01-20",
-        "sales2": 6000
-      }, {
-        "date": "2013-01-21",
         "sales2": 5000
       }, {
-        "date": "2013-01-22",
+        "date": "2013-01-19",
         "sales2": 7000
+      }, {
+        "date": "2013-01-20",
+        "sales2": 2000
+      }, {
+        "date": "2013-01-21",
+        "sales2": 4000
+      }, {
+        "date": "2013-01-22",
+        "sales2": 6000
       }, {
         "date": "2013-01-23",
         "sales2": 6000
@@ -119,19 +118,19 @@
         "sales2": 5000
       }, {
         "date": "2013-01-25",
-        "sales2": 8000
+        "sales2": 9000
       }, {
         "date": "2013-01-26",
         "sales2": 8000
       }, {
         "date": "2013-01-27",
-        "sales2": 4000
+        "sales2": 3000
       }, {
         "date": "2013-01-28",
         "sales2": 7000
       }, {
         "date": "2013-01-29",
-        "sales2": 8000
+        "sales2": 2000
       }, {
         "date": "2013-01-30",
         "sales2": 7000
